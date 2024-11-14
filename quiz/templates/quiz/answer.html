@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Answer</title>
+</head>
+<body>
+    <h1>Answer</h1>
+    <p><strong>{{ question.question_id }}.</strong> Question: {{ question.question_text }}</p>
+    <p>Answer: {{ question.answer_text }}</p>
+    <a href="{% url 'quiz' %}">Next Question</a>
+</body>
+</html>

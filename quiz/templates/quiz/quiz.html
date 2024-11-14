@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz</title>
+</head>
+<body>
+    <h1>Quiz Question</h1>
+    <p><strong>{{ question.question_id }}.</strong> {{ question.question_text }}</p>
+    <form action="{% url 'answer' question.question_id %}" method="get">
+        <button type="submit">See Answer</button>
+    </form>
+</body>
+</html>
