@@ -1,13 +1,101 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Quiz</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Question</title>
+    <style>
+        /* Centering container vertically and horizontally */
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff; /* Light blue background for question page */
+            position: relative;
+        }
+        
+        .container {
+            max-width: 90vw;
+            width: 100%;
+            text-align: center;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            background-color: #ffffff;
+        }
+
+        .container h1 {
+            font-size: 2rem;
+            color: #333366;
+            margin-bottom: 15px;
+        }
+
+        .container p {
+            font-size: 1.5rem;
+            color: #333;
+            margin: 10px 0;
+        }
+
+        .status {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .container button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            margin-top: 15px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        /* Top right status label */
+        .questions-left {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1rem;
+            color: #333;
+            background-color: #eeeeee;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        /* Adjustments for smaller screens */
+        @media (max-width: 600px) {
+            .container h1, .container p {
+                font-size: 1.2rem;
+            }
+
+            .container button {
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Quiz Question</h1>
-    <p><strong>{{ question.question_id }}.</strong> {{ question.question_text }}</p>
-    <form action="{% url 'answer' question.question_id %}" method="get">
-        <button type="submit">See Answer</button>
-    </form>
+    <div class="questions-left">
+        {{ questions_left }} questions left
+    </div>
+    <div class="container">
+        <h1>Question</h1>
+        <p class="status">{{ status }}</p> <!-- Status label showing shuffle progress -->
+        <p><strong>{{ question.question_id }}.</strong> {{ question.question_text }}</p>
+        <form action="{% url 'answer' question.question_id %}" method="get">
+            <button type="submit">See Answer</button>
+        </form>
+        <form action="{% url 'reset_quiz' %}" method="post">
+            {% csrf_token %}
+            <button type="submit" style="background-color: #FF6347; margin-top: 10px;">Reset Quiz</button>
+        </form>
+    </div>
 </body>
 </html>

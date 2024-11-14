@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Ended</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background-color: #fafafa;
+        }
+        .container {
+            max-width: 80vw;
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>{{ message }}</h1>
+        <form action="{% url 'reset_quiz' %}" method="post">
+            {% csrf_token %}
+            <button type="submit" style="background-color: #FF6347; padding: 10px 20px; color: white; border: none; border-radius: 5px;">Reset Quiz</button>
+        </form>
+    </div>
+</body>
+</html>
