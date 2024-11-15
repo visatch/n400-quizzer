@@ -89,7 +89,7 @@
             color: white;
         }
     
-        .container .answer-button {
+        .container .see-answer {
             background-color: #4CAF50;
             color: white;
         }
@@ -107,7 +107,7 @@
             <p class="question-text"><strong>{{ question.question_id }}.</strong> {{ question.question_text }}</p>
         </div>
         <form action="{% url 'answer' question.question_id %}" method="get">
-            <button type="submit">See Answer</button>
+            <button type="submit" class="see-answer" >See Answer</button>
         </form>
         <form action="{% url 'next_question' %}" method="post">
             {% csrf_token %}
