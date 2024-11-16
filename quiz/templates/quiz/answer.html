@@ -18,8 +18,8 @@
         }
         
         .container {
-            width: 80vw; /* Fixed width based on viewport width */
-            max-width: 600px; /* Limit width on larger screens */
+            width: 100vw; /* Fixed width based on viewport width */
+            max-width: 800px; /* Limit width on larger screens */
             text-align: center;
             padding: 20px;
             border-radius: 8px;
@@ -83,16 +83,6 @@
             background-color: #007bff;
             color: white;
         }
-    
-        .container .reset-button {
-            background-color: #FF6347;
-            color: white;
-        }
-    
-        .container .answer-button {
-            background-color: #4CAF50;
-            color: white;
-        }
     </style>
 </head>
 <body>
@@ -109,7 +99,7 @@
         </div>
         <form action="{% url 'next_question' %}" method="post">
             {% csrf_token %}
-            <button type="submit">Next Question</button>
+            <button type="submit" class="next-button" >Next Question</button>
         </form>
     </div>
 </body>
