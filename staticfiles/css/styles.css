@@ -1,0 +1,18 @@
+.answer-sheet-link {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    text-decoration: none;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+    z-index: 1000; /* Ensure it stays on top of other elements */
+}
+
+.answer-sheet-link:hover {
+    background-color: #0056b3;
+}

@@ -1,8 +1,10 @@
+{% load static  %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <title>Answer</title>
     <style>
         /* Centering container vertically and horizontally */
@@ -78,7 +80,6 @@
             border: none;
             border-radius: 5px;
         }
-    
         .container .next-button {
             background-color: #007bff;
             color: white;
@@ -102,5 +103,10 @@
             <button type="submit" class="next-button" >Next Question</button>
         </form>
     </div>
+    <a href="https://www.uscis.gov/sites/default/files/document/questions-and-answers/100q.pdf" 
+       target="_blank" 
+       class="answer-sheet-link">
+       Answer Sheet
+    </a>
 </body>
 </html>

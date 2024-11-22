@@ -1,9 +1,11 @@
+{% load static  %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Question</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <style>
         /* Centering container vertically and horizontally */
         body, html {
@@ -125,5 +127,10 @@
             <button type="submit" class="reset-button">Reset Quiz</button>
         </form>
     </div>
+    <a href="https://www.uscis.gov/sites/default/files/document/questions-and-answers/100q.pdf" 
+        target="_blank" 
+        class="answer-sheet-link">
+        Answer Sheet
+     </a>
 </body>
 </html>
